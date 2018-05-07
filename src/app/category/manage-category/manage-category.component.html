@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <h3>Cotegories</h3>
+  </div>
+</section>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 pull-right">
+      <div class="form-group">
+        <button name="add" routerLink="../add" class="btn btn-primary">ADD CATEGORY</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Category Group</th>
+          <th>Tag</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let category of categories; let i = index">
+          <td scope="row">{{i+1}}</td>
+          <td>{{category.category_name}}</td>
+          <td>{{category.meta_tag_title}}</td>
+          <td>{{category.meta_tag_keywords}}</td>
+          <td><a [routerLink]="['../edit', category.category_id]" class=""><span class="icofont icofont-edit"></span><span class="icofont icofont-bin"></span> </a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

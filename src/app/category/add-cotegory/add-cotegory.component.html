@@ -1,0 +1,106 @@
+<section>
+  <div class="container">
+    <h3>Add Category</h3>
+  </div>
+</section>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label">Select Group</label>
+          <div class="col-sm-8">
+            <select name="category_group_id" id="category_group_id" class="form-control" #category_group_id="ngModel" ngModel required>
+              <option value="1">Select One Value Only</option>
+              <option value="2">Type 2</option>
+              <option value="3">Type 3</option>
+              <option value="4">Type 4</option>
+              <option value="5">Type 5</option>
+              <option value="6">Type 6</option>
+              <option value="7">Type 7</option>
+              <option value="8">Type 8</option>
+            </select>
+            <span class="has-dange" *ngIf="!category_group_id.valid && category_group_id.touched">Please select category group</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group  row" >
+          <div class="col-md-4">
+            <label class="col-form-label" for="category_name">Category Name</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" name="category_name" class="form-control" id="category_name" #category_name="ngModel" ngModel required />
+            <span class="has-dange" *ngIf="!category_name.valid && category_name.touched">Category name is required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group  row" >
+          <div class="col-md-4">
+            <label class="col-form-label" for="category_name">Meta Tag Title</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" name="meta_tag_title" class="form-control" id="meta_tag_title" #meta_tag_title="ngModel"  ngModel required />
+            <span class="has-dange" *ngIf="!meta_tag_title.valid && meta_tag_title.touched">Meta Tag Title is required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group  row" >
+          <div class="col-md-4">
+            <label class="col-form-label" for="category_name">Meta Tag Keyword</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" name="meta_tag_keywords" class="form-control" id="meta_tag_keywords" #meta_tag_keywords="ngModel" ngModel required />
+            <span class="has-dange" *ngIf="!meta_tag_keywords.valid && meta_tag_keywords.touched">Meta Tag keyword is required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label">Category Description</label>
+          <div class="col-sm-8">
+            <textarea rows="5" cols="5"
+                      name="category_description" class="form-control"
+                      placeholder="Default textarea"
+                      id="category_description" #category_description="ngModel" ngModel required>
+
+            </textarea>
+            <span class="has-dange" *ngIf="!category_description.valid && category_description.touched">Category description is required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label">Meta Tag Description</label>
+          <div class="col-sm-8">
+            <textarea rows="5" cols="5"
+                      name="meta_tag_description"
+                      class="form-control" placeholder="Default textarea"
+                      id="meta_tag_description" ngModel>
+
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group  row" >
+          <button type="submit" [disabled]="!form.valid" name="submit" class="btn btn-primary">ADD</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
